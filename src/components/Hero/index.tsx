@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import BasicModal from "../Modal";
 
 const Hero = () => {
@@ -29,8 +28,8 @@ const Hero = () => {
                   className="mx-auto mb-9 max-w-[600px] text-base font-medium text-white sm:text-lg sm:leading-[1.44]"
                 >
                   Our experienced team of problem solvers and a commitment to
-                  always align with our client's business goals and objectives
-                  is what drives mutual success
+                  always align with our client&apos;s business goals and
+                  objectives is what drives mutual success
                 </p>
                 <ul className="mb-10 flex flex-wrap items-center justify-center gap-5">
                   <li>
