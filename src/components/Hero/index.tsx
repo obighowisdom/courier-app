@@ -1,5 +1,5 @@
 import Image from "next/image";
-import BasicModal from "../Modal";
+import { Input, Button, Stack, HStack } from "@chakra-ui/react";
 
 const Hero = () => {
   return (
@@ -36,9 +36,12 @@ const Hero = () => {
                     <div
                       data-aos="fade-right"
                       data-aos-delay="200"
-                      className="inline-flex items-center justify-center rounded-md bg-dark px-7 py-[14px] text-center text-base font-medium text-dark shadow-1 transition duration-300 ease-in-out hover:bg-gray-2"
+                      className="inline-flex items-center justify-center rounded-md bg-dark px-7 py-[14px] text-center text-base font-medium text-dark shadow-1 "
                     >
-                      <BasicModal />
+                      <HStack spacing="24px">
+                        <Input className="text-white" placeholder="GHT-C65..." required type="text" />
+                        <Button className="transition duration-300 ease-in-out hover:bg-gray-2">Track..</Button>
+                      </HStack>
                     </div>
                   </li>
                   <li></li>

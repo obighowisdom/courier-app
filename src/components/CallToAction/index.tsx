@@ -1,5 +1,4 @@
 import Link from "next/link";
-import BasicModal from "../Modal";
 
 const CallToAction = () => {
   return (
@@ -17,7 +16,9 @@ const CallToAction = () => {
                   Are you Nervous about getting your package delivered? Nothing
                   to worry about we got you... for real
                 </p>
-                <BasicModal />
+  
+                
+                
               </div>
             </div>
           </div>
