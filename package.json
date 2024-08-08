@@ -37,6 +37,7 @@
     "tailgrids": "^2.1.0"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@types/bcrypt": "^5.0.2",
     "@types/node": "^20.11.27",
     "@types/nodemailer": "^6.4.14",
