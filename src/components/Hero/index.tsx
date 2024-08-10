@@ -6,7 +6,7 @@ const Hero = () => {
     <>
       <section
         id="home"
-        className="relative overflow-hidden bg-[url('/main-bg-1.jpg')] bg-cover bg-no-repeat pt-[120px] md:pt-[130px] lg:pt-[160px]"
+        className="relative overflow-hidden bg-[url('/carousel-1.jpg')] bg-cover bg-no-repeat object-cover pt-[120px] md:pt-[130px] lg:pt-[160px]"
       >
         <div className="container">
           <div className="-mx-4 flex flex-wrap items-center">
@@ -20,7 +20,7 @@ const Hero = () => {
                   data-aos-delay="600"
                   className="mb-6 text-3xl font-bold leading-snug text-white sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]"
                 >
-                  Digital & Transport Trusted Logistics Company
+                  Digital & <b className='text-dark-700'> Transport Trusted  </b> Logistics Company
                 </h1>
                 <p
                   data-aos="zoom-in"

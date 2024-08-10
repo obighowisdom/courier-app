@@ -1,6 +1,7 @@
 "use client";
 
 import Footer from "@/components/Footer";
+
 import Header from "@/components/Header";
 import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "next-themes";
@@ -9,6 +10,8 @@ import "../styles/prism-vsc-dark-plus.css";
 import { useEffect, useState } from "react";
 import PreLoader from "@/components/Common/PreLoader";
 import { ChakraProvider } from "@chakra-ui/react";
+
+
 
 export default function RootLayout({
   children,
@@ -27,6 +30,7 @@ export default function RootLayout({
         <head /> will contain the components returned by the nearest parent
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
+
       <head />
 
       <body>

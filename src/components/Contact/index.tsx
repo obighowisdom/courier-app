@@ -33,7 +33,7 @@ const Contact = () => {
                       Our Location
                     </h3>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      401 Broadway, 24th Floor, Orchard Cloud View, London
+                      111 W. Ocean Blvd. Suite 1000 Long Beach, CA 90802{" "}
                     </p>
                   </div>
                 </div>
@@ -53,10 +53,10 @@ const Contact = () => {
                       How Can We Help?
                     </h3>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      info@yourdomain.com
+                      support@cargoexplore.com
                     </p>
                     <p className="mt-1 text-base text-body-color dark:text-dark-6">
-                      contact@yourdomain.com
+                      Tel: <b>+17744620639</b>
                     </p>
                   </div>
                 </div>

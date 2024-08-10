@@ -13,11 +13,11 @@ const Footer = () => {
             <div className="mb-10 w-full">
               <Link href="/" className="mb-6 inline-block max-w-[160px]">
                 <Image
-                  src="/images/logo/logo-white.svg"
+                  src="/icon.jpg"
+                  width={40}
+                  height={40}
                   alt="logo"
-                  width={140}
-                  height={30}
-                  className="max-w-full"
+                  className="rounded-lg"
                 />
               </Link>
               <p className="mb-8 max-w-[270px] text-base text-gray-7">
@@ -196,7 +196,6 @@ const Footer = () => {
               <div className="my-1 flex justify-center md:justify-end">
                 <p className="text-base text-gray-7">
                   2024 © - all rights reserved{" "}
-               
                 </p>
               </div>
             </div>
