@@ -17,7 +17,7 @@ import { useState, useMemo } from "react";
 import Select from "react-select";
 import countryList from "react-select-country-list";
 
-const index = () => {
+const Index = () => {
   const [value, setValue] = useState("");
   const options = useMemo(() => countryList().getData(), []);
 
@@ -172,7 +172,7 @@ const index = () => {
                   htmlFor="phone"
                   className="mb-4 block text-sm text-body-color dark:text-dark-6"
                 >
-                  Sender's Name*
+                  Sender Name*
                 </label>
                 <input
                   type="text"
@@ -185,7 +185,7 @@ const index = () => {
                   htmlFor="phone"
                   className="mb-4 block text-sm text-body-color dark:text-dark-6"
                 >
-                  Sender's Tel*
+                  Sender Tel*
                 </label>
                 <input
                   type="text"
@@ -198,7 +198,7 @@ const index = () => {
                   htmlFor="phone"
                   className="mb-4 block text-sm text-body-color dark:text-dark-6"
                 >
-                  Sender's Country*
+                  Sender Country*
                 </label>
                 <input
                   type="text"
@@ -328,7 +328,7 @@ const index = () => {
                   htmlFor="phone"
                   className="mb-4 block text-sm text-body-color dark:text-dark-6"
                 >
-                  Officer's Comment*
+                  Officer Comment*
                 </label>
                 <input
                   type="text"
@@ -373,4 +373,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
