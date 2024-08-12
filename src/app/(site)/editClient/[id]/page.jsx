@@ -3,7 +3,7 @@ import EditForm from "../../../../components/EditForm/EditForm";
 
 const getTopicById = async (id) => {
   try {
-    const res = await fetch(`http://localhost:3000/api/topics/${id}`, {
+    const res = await fetch(`https://www.cargoexplore.com/api/topics/${id}`, {
       cache: "no-store",
     });
     if (!res.ok) {

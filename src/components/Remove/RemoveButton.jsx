@@ -9,7 +9,7 @@ const RemoveButton = ({ id }) => {
         const confirmed = confirm('Do you want to delete the user?')
         if (confirmed) {
             const res = await fetch(
-              `http://localhost:3000/api/topics?id=${id}`,
+              `https://www.cargoexplore.com/api/topics?id=${id}`,
               { method: "DELETE" },
             );
             if (res.ok) {

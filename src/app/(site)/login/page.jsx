@@ -8,17 +8,17 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const router = useRouter();
-  const adminLogin = (e) => {
-    e.preventDefault();
-    const newUsername = 'AdminExplore';
-    const newPassword = "AdminExplore456@34";
-    if (username === newUsername && password === newPassword) {
-      Cookies.set("loggedIn", true);
-      router.push("/admin");
-    } else {
-      return;
-    }
-  };
+  // const adminLogin = (e) => {
+  //   e.preventDefault();
+  //   const newUsername = 'AdminExplore';
+  //   const newPassword = "AdminExplore456@34";
+  //   if (username === newUsername && password === newPassword) {
+  //     Cookies.set("loggedIn", true);
+  //     router.push("/admin");
+  //   } else {
+  //     return;
+  //   }
+  // };
   return (
     <div
       className="absolute right-0 top-0 z-50 flex h-[100vh] w-full items-center justify-center overflow-hidden

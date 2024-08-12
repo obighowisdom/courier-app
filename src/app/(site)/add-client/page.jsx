@@ -41,7 +41,7 @@ const AddClient = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:3000/api/topics", {
+      const res = await fetch("https://www.cargoexplore.com/api/topics", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -373,6 +373,7 @@ const AddClient = () => {
               Submit
             </button>
             <button
+              onClick={()=>router.push('/admin')}
               type="submit"
               className="inline-flex items-center justify-center rounded-md bg-red-950 px-10 py-3 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-primary/90"
             >
