@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 
-const page = () => {
+const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -75,4 +75,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Login;

@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
-import Select from "react-select";
+import React, { useState, } from "react";
 import countryList from "react-select-country-list";
 import {useRouter} from "next/navigation";
 
@@ -14,10 +13,9 @@ function createRandomString(length) {
   return result;
 }
 
-const page = () => {
+const AddClient = () => {
   const trackingID = "CEXP-" + createRandomString(8).toString();
   const orderID = "CEXP-ORD-" + createRandomString(7).toString();
-  const options = useMemo(() => countryList().getData(), []);
 
   const router = useRouter();
 
@@ -39,13 +37,7 @@ const page = () => {
   const [comment, setComment] = useState("");
     const [map, setMap] = useState("");
 
-    const changeHandler = (value) => {
-      setClientCountry(value);
-    };
-
-    const changeSender = (value) => {
-      setSenderCountry(value);
-    };
+    
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -393,4 +385,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default AddClient;
