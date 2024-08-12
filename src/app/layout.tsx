@@ -10,8 +10,7 @@ import "../styles/prism-vsc-dark-plus.css";
 import { useEffect, useState } from "react";
 import PreLoader from "@/components/Common/PreLoader";
 import { ChakraProvider } from "@chakra-ui/react";
-
-
+import { TrackingProvider } from "../components/Context/Context";
 
 export default function RootLayout({
   children,
@@ -38,17 +37,19 @@ export default function RootLayout({
           {loading ? (
             <PreLoader />
           ) : (
-            <SessionProvider>
-              <ThemeProvider
-                attribute="class"
-                enableSystem={false}
-                defaultTheme="light"
-              >
-                <Header />
-                {children}
-                <Footer />
-              </ThemeProvider>
-            </SessionProvider>
+            <TrackingProvider>
+              <SessionProvider>
+                <ThemeProvider
+                  attribute="class"
+                  enableSystem={false}
+                  defaultTheme="light"
+                >
+                  <Header />
+                  {children}
+                  <Footer />
+                </ThemeProvider>
+              </SessionProvider>
+            </TrackingProvider>
           )}
         </ChakraProvider>
       </body>
