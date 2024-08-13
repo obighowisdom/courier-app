@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, } from "react";
-import countryList from "react-select-country-list";
-import {useRouter} from "next/navigation";
+import React, { useState } from "react";
+import { Spinner } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 
 function createRandomString(length) {
   const chars = "ABCDEFGHIJKLMNOPQRS-TUVWXYZ-0123456789";
@@ -27,18 +27,20 @@ const AddClient = () => {
   const [senderTel, setSenderTel] = useState("");
   const [senderCountry, setSenderCountry] = useState("");
   const [destination, setDestination] = useState("");
-  const [orderDate, setOrderDate] = useState('');
+  const [orderDate, setOrderDate] = useState("");
   const [packageWeight, setPackageWeight] = useState("");
   const [packageDesc, setPackageDesc] = useState("");
   const [status, setStatus] = useState("");
-  const [delDate, setDelDate] = useState('');
+  const [delDate, setDelDate] = useState("");
   const [mode, setMode] = useState("");
   const [officer, setOfficer] = useState("");
   const [comment, setComment] = useState("");
-    const [map, setMap] = useState("");
+  const [map, setMap] = useState("");
 
-    
+  const [loader, setLoader] = useState(false);
+
   const handleSubmit = async (e) => {
+    setLoader(true);
     e.preventDefault();
     try {
       const res = await fetch("https://www.cargoexplore.com/api/topics", {
@@ -68,14 +70,15 @@ const AddClient = () => {
           map,
         }),
       });
-        if (res.ok) {
-            alert("Added client successfully")
-            router.push('/admin')
-        } else {
-            throw new Error("Failed to create a client")
-        }
+      if (res.ok) {
+        alert("Added client successfully");
+        setLoader(false);
+        router.push("/exploreAdministration_ADMIN");
+      } else {
+        throw new Error("Failed to create a client");
+      }
     } catch (error) {
-        console.log(error)
+      console.log(error);
     }
   };
 
@@ -98,7 +101,6 @@ const AddClient = () => {
                 onChange={(e) => setClientName(e.target.value)}
                 value={clientName}
                 type="text"
-                name="phone"
                 placeholder="+885 1254 5211 552"
                 className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
               />
@@ -108,13 +110,12 @@ const AddClient = () => {
                 htmlFor="phone"
                 className="mb-4 block text-sm text-body-color dark:text-dark-6"
               >
-                Email Address*
+                Client Email*
               </label>
               <input
                 onChange={(e) => setEmail(e.target.value)}
                 value={email}
                 type="text"
-                name="phone"
                 className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
               />
             </div>
@@ -129,7 +130,6 @@ const AddClient = () => {
                 onChange={(e) => setState(e.target.value)}
                 value={state}
                 type="text"
-                name="phone"
                 className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
               />
             </div>
@@ -145,7 +145,6 @@ const AddClient = () => {
                 onChange={(e) => setClientCountry(e.target.value)}
                 value={clientCountry}
                 type="text"
-                name="phone"
                 className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
               />
             </div>
@@ -161,7 +160,6 @@ const AddClient = () => {
                 onChange={(e) => setSenderName(e.target.value)}
                 value={senderName}
                 type="text"
-                name="phone"
                 className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
               />
             </div>
@@ -170,13 +168,12 @@ const AddClient = () => {
                 htmlFor="phone"
                 className="mb-4 block text-sm text-body-color dark:text-dark-6"
               >
-                Sender Tel*
+                Receiver Tel*
               </label>
               <input
                 onChange={(e) => setSenderTel(e.target.value)}
                 value={senderTel}
                 type="text"
-                name="phone"
                 className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
               />
             </div>
@@ -191,7 +188,6 @@ const AddClient = () => {
                 onChange={(e) => setSenderCountry(e.target.value)}
                 value={senderCountry}
                 type="text"
-                name="phone"
                 className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
               />
             </div>
@@ -207,7 +203,6 @@ const AddClient = () => {
                 onChange={(e) => setDestination(e.target.value)}
                 value={destination}
                 type="text"
-                name="phone"
                 className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
               />
             </div>
@@ -225,7 +220,6 @@ const AddClient = () => {
                   setOrderDate(e.target.value);
                 }}
                 type="text"
-                name="phone"
                 className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
               />
             </div>
@@ -240,7 +234,6 @@ const AddClient = () => {
                 onChange={(e) => setPackageWeight(e.target.value)}
                 value={packageWeight}
                 type="text"
-                name="phone"
                 placeholder="80kg"
                 className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
               />
@@ -256,7 +249,6 @@ const AddClient = () => {
                 onChange={(e) => setPackageDesc(e.target.value)}
                 value={packageDesc}
                 type="text"
-                name="phone"
                 className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
               />
             </div>
@@ -292,7 +284,6 @@ const AddClient = () => {
                   setDelDate(e.target.value);
                 }}
                 type="date"
-                name="phone"
                 className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
               />
             </div>
@@ -328,7 +319,6 @@ const AddClient = () => {
                 onChange={(e) => setOfficer(e.target.value)}
                 value={officer}
                 type="text"
-                name="phone"
                 className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
               />
             </div>
@@ -343,7 +333,6 @@ const AddClient = () => {
                 onChange={(e) => setComment(e.target.value)}
                 value={comment}
                 type="text"
-                name="phone"
                 className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
               />
             </div>
@@ -358,22 +347,32 @@ const AddClient = () => {
                 onChange={(e) => setMap(e.target.value)}
                 value={map}
                 type="text"
-                name="phone"
                 className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
               />
             </div>
           </div>
 
           <div className="mb-0 flex flex-wrap items-center gap-3">
+            {loader ? (
+              <button
+                disabled
+                type="submit"
+                className="inline-flex items-center justify-center rounded-md bg-primary px-10 py-3 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-primary/90"
+              >
+                <Spinner />
+              </button>
+            ) : (
+              <button
+                onClick={handleSubmit}
+                type="submit"
+                className="inline-flex items-center justify-center rounded-md bg-primary px-10 py-3 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-primary/90"
+              >
+                Submit
+              </button>
+            )}
+
             <button
-              onClick={handleSubmit}
-              type="submit"
-              className="inline-flex items-center justify-center rounded-md bg-primary px-10 py-3 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-primary/90"
-            >
-              Submit
-            </button>
-            <button
-              onClick={()=>router.push('/admin')}
+              onClick={() => router.push("/exploreAdministration_ADMIN")}
               type="submit"
               className="inline-flex items-center justify-center rounded-md bg-red-950 px-10 py-3 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-primary/90"
             >

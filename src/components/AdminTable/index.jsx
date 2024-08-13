@@ -24,6 +24,7 @@ const getUsers = async () => {
       throw new Error("Failed to get clients");
     }
     return res.json();
+    
   } catch (error) {
     console.log("Error loading clients: ", error);
   }
@@ -55,7 +56,7 @@ const Index = async () => {
               <Tr key={index}>
                 <Td>
                   <b className="text-sm dark:text-blue-900">
-                    {users._id}
+                    {users.trackingID}
                   </b>
                 </Td>
                 <Td>

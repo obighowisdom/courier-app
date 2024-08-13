@@ -14,7 +14,8 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
-    "@mui/material": "^5.16.6",
+    "@mui/material": "^5.16.7",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@prisma/client": "^5.11.0",
     "@react-google-maps/api": "^2.19.3",
     "aos": "^2.3.4",
@@ -46,6 +47,7 @@
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "stripe": "^14.7.0",
+    "styled-components": "^6.1.12",
     "tailgrids": "^2.1.0"
   },
   "devDependencies": {

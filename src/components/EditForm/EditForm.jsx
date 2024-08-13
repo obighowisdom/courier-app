@@ -33,7 +33,7 @@ const EditForm = ({ id, status, delDate, mode, officer, comment, map }) => {
       if (!res.ok) {
         throw new Error("failled to update");
       }
-      router.push("/admin");
+      router.push("/exploreAdministration_ADMIN");
       router.refresh();
     } catch (error) {
       console.log(error);

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Track from '../Track/Track'
+import Track from "../Track/Track";
 const Hero = () => {
   return (
     <>
@@ -19,7 +19,8 @@ const Hero = () => {
                   data-aos-delay="600"
                   className="mb-6 text-3xl font-bold leading-snug text-white sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]"
                 >
-                  Digital & <b className='text-dark-700'> Transport Trusted  </b> Logistics Company
+                  Digital & <b className="text-dark-700"> Transport Trusted </b>{" "}
+                  Logistics Company
                 </h1>
                 <p
                   data-aos="zoom-in"
@@ -37,7 +38,9 @@ const Hero = () => {
                       data-aos-delay="200"
                       className="inline-flex items-center justify-center rounded-md bg-dark px-7 py-[14px] text-center text-base font-medium text-dark shadow-1 "
                     >
-                    <Track />
+                      <div className="z-[1000]">
+                        <Track />
+                      </div>
                     </div>
                   </li>
                   <li></li>
