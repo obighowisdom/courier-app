@@ -126,6 +126,7 @@ const Track = () => {
             } = item;
             return (
               <Details
+                key={index}
                 clientName={clientName}
                 email={email}
                 state={state}
