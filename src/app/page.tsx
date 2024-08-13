@@ -18,7 +18,8 @@ export default function Home() {
 
   return (
     <main className="overflow-x-hidden">
-     <Land />
+      <Land />
+      
     </main>
   );
 }
