@@ -9,19 +9,27 @@ import {
   StepTitle,
   Stepper,
   useSteps,
-  Box
+  Box,
 } from "@chakra-ui/react";
 import { FaHouseCircleExclamation } from "react-icons/fa6";
+import { FaRoute } from "react-icons/fa6";
 
 const steps = [
   { title: "Pending", description: "Your Package is Pending" },
-  { title: "En-ROute", description: "Your Package is on the way" },
+  { title: "En-Route", description: "Your Package is on the way" },
   { title: "Delivered", description: "Your Package successfully delivered" },
 ];
 
-export default function Example() {
+export default function Example({ status }) {
   const { activeStep } = useSteps({
-    index: 1,
+    index:
+      status === "Pending"
+        ? 1
+        : status === "En-Route"
+          ? 2
+          : status === "Delivered"
+            ? 3
+            : 1,
     count: steps.length,
   });
 

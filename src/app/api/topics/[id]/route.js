@@ -1,5 +1,5 @@
 import connectMongoDB from '../../../../../libs/mongodb'
-import Topic from '../../../../../models/users'
+import Topic from '../../../../../models/users/users'
 import { NextResponse } from "next/server"
 
 export async function PUT(request, { params }) {

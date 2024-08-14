@@ -1,4 +1,46 @@
+"use client";
+
+import { useState } from "react";
+import { Spinner } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
+
 const Contact = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [loader, setLoader] = useState(false);
+
+  const router = useRouter();
+
+  const handleSubmit = async (e) => {
+    setLoader(true);
+    e.preventDefault();
+    try {
+      const res = await fetch("https://www.cargoexplore.com/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          message,
+        }),
+      });
+      if (res.ok) {
+        alert("Message have been sent successfully");
+        setLoader(false);
+        router.push("/");
+      } else {
+        throw new Error("Message not sent");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <section id="contact" className="relative py-20 md:py-[120px]">
       <div className="absolute left-0 top-0 -z-[1] h-full w-full dark:bg-dark"></div>
@@ -83,6 +125,9 @@ const Contact = () => {
                     Full Name*
                   </label>
                   <input
+                    required
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
                     type="text"
                     name="fullName"
                     placeholder="Adam Gelius"
@@ -97,6 +142,9 @@ const Contact = () => {
                     Email*
                   </label>
                   <input
+                    required
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
                     type="email"
                     name="email"
                     placeholder="example@yourmail.com"
@@ -111,6 +159,9 @@ const Contact = () => {
                     Phone*
                   </label>
                   <input
+                    required
+                    onChange={(e) => setPhone(e.target.value)}
+                    value={phone}
                     type="text"
                     name="phone"
                     placeholder="+885 1254 5211 552"
@@ -125,6 +176,9 @@ const Contact = () => {
                     Message*
                   </label>
                   <textarea
+                    required
+                    onChange={(e) => setMessage(e.target.value)}
+                    value={message}
                     name="message"
                     rows={1}
                     placeholder="type your message here"
@@ -132,12 +186,18 @@ const Contact = () => {
                   ></textarea>
                 </div>
                 <div className="mb-0">
-                  <button
-                    type="submit"
-                    className="inline-flex items-center justify-center rounded-md bg-primary px-10 py-3 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-primary/90"
-                  >
-                    Send
-                  </button>
+                  {loader ? (
+                    <Spinner />
+                  ) : (
+                    <button
+                      onClick={handleSubmit}
+                      type="submit"
+                      className="inline-flex items-center justify-center rounded-md bg-primary px-10 py-3 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-primary/90"
+                    >
+                      Send
+                    </button>
+                  )}
+                  
                 </div>
               </form>
             </div>

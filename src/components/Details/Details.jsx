@@ -33,7 +33,7 @@ import { useEffect, useState } from "react";
 import { MdLocalShipping } from "react-icons/md";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import Stepper from "@/components/Stepper/index.tsx";
+import Stepper from "@/components/Stepper/index.jsx";
 import {useRouter} from 'next/navigation'
 
 const Details = ({
@@ -99,7 +99,7 @@ const Details = ({
                   ></iframe>
                 </div>
                 <div className="flex flex-wrap items-center justify-between gap-7 rounded-md bg-dark-700 p-5">
-                  <Stepper />
+                  <Stepper status={status} />
 
                   <TableContainer>
                     <Table variant="striped" colorScheme="red">

@@ -45,7 +45,7 @@ export default function RootLayout({
                   defaultTheme="light"
                 >
                   <Header />
-                  {children}
+                    {children}
                   <Footer />
                 </ThemeProvider>
               </SessionProvider>
