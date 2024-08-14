@@ -11,8 +11,7 @@ import {
   useSteps,
   Box,
 } from "@chakra-ui/react";
-import { FaHouseCircleExclamation } from "react-icons/fa6";
-import { FaRoute } from "react-icons/fa6";
+
 
 const steps = [
   { title: "Pending", description: "Your Package is Pending" },
