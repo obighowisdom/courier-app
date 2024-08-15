@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import PreLoader from "@/components/Common/PreLoader";
 import { ChakraProvider } from "@chakra-ui/react";
 import { TrackingProvider } from "../components/Context/Context";
+import Widget from "../components/ChatLive/Widget";
 
 export default function RootLayout({
   children,
@@ -45,13 +46,14 @@ export default function RootLayout({
                   defaultTheme="light"
                 >
                   <Header />
-                    {children}
+                  {children}
                   <Footer />
                 </ThemeProvider>
               </SessionProvider>
             </TrackingProvider>
           )}
         </ChakraProvider>
+        <Widget />
       </body>
     </html>
   );
