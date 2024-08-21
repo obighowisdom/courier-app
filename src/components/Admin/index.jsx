@@ -1,6 +1,6 @@
 import { IoMdPersonAdd } from "react-icons/io";
 import AdminTable from "@/components/AdminTable";
-import { FaUserGroup } from "react-icons/fa6";
+import { GrUpdate } from "react-icons/gr";
 import Message from "../Message/Message";
 import Link from "next/link";
 import Client from "../ClientNumber/Client";
@@ -25,6 +25,20 @@ const Admin = () => {
                 className="rounded-lg bg-gray-1 p-3"
               >
                 Add Client
+              </Link>
+            </div>
+
+            <div className="flex h-[100%] w-[250px] flex-col items-center justify-center gap-5 rounded-md border-none bg-dark-700 py-5 dark:bg-gray-5">
+              <div className="rounded-[50%] bg-gray-300 p-7">
+                <GrUpdate size={25} color="red" />
+              </div>
+              <Link
+                href={"/update"}
+                colorScheme="teal"
+                variant="solid"
+                className="rounded-lg bg-gray-1 p-3"
+              >
+                Update Info
               </Link>
             </div>
             <Client />

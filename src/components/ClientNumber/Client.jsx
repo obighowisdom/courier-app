@@ -22,9 +22,9 @@ const Client = async () => {
       <div className="rounded-[50%] bg-gray-300 p-7">
         <FaUsers size={25} color="blue" />
       </div>
-      <div className=" flex flex-col gap-1 items-center justify-center rounded-lg bg-gray-1 p-3">
+      <div className=" flex gap-1 items-center justify-center rounded-lg bg-gray-1 p-3">
         <h3 className="font-bold text-[20px] text-red-950">{contact.length}</h3>
-        Number of Clients
+        Clients
       </div>
     </div>
   );

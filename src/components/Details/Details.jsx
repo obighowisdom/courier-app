@@ -29,12 +29,14 @@ import {
   TableContainer,
   Spinner,
 } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MdLocalShipping } from "react-icons/md";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import Stepper from "@/components/Stepper/index.jsx";
-import {useRouter} from 'next/navigation'
+import { useRouter } from "next/navigation";
+import VerticalLinearStepper from "../MUIStepper/MStepper";
+import Link from "next/link";
 
 const Details = ({
   clientName,
@@ -72,7 +74,7 @@ const Details = ({
     });
   };
 
-    const router = useRouter()
+  const router = useRouter();
   return (
     <section className="bg-gradient-to-r from-indigo-200 pt-[70px]  ">
       <Container maxW={"7xl"}>
@@ -124,6 +126,9 @@ const Details = ({
                       <Tfoot></Tfoot>
                     </Table>
                   </TableContainer>
+                </div>
+                <div className="flex-wrap items-center justify-between gap-7 rounded-md bg-gray p-5">
+                  <VerticalLinearStepper trackingID={trackingID} />
                 </div>
               </div>
             </Flex>
@@ -204,8 +209,8 @@ const Details = ({
                             </Td>
                             <Td>
                               {" "}
-                              {"  "} 111 W. Ocean Blvd. <br /> Suite 1000 Long Beach,
-                              CA 90802
+                              {"  "} 111 W. Ocean Blvd. <br /> Suite 1000 Long
+                              Beach, CA 90802
                             </Td>
                           </Tr>
                         </Tbody>
