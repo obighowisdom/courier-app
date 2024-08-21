@@ -24,7 +24,7 @@ const UpdateClient = () => {
     setLoader(true);
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:3000/api/update", {
+      const res = await fetch("https://www.cargoexplore.com/api/update", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
